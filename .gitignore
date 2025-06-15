@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/JWTLoginAuthorizationRoleBased/.vs/JWTLoginAuthorizationRoleBased/v17
+/JWTLoginAuthorizationRoleBased/JWTLoginAuthorizationRoleBased/obj
+/JWTLoginAuthorizationRoleBased/.vs
+/JWTLoginAuthorizationRoleBased/JWTLoginAuthorizationRoleBased/bin/Debug/net9.0
