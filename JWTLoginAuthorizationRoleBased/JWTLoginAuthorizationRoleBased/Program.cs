@@ -62,7 +62,7 @@ app.UseHsts();
 app.UseHttpsRedirection();
 app.UseRouting();
 
-app.UseAuthentication(); // 🔐 Required before Authorization
+app.UseAuthentication(); 
 app.UseAuthorization();
 app.UseStaticFiles();
 
