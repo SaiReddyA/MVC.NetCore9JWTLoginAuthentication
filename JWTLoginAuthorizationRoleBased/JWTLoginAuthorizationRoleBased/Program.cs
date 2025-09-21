@@ -1,18 +1,4 @@
-﻿global using JWTLoginAuthorizationRoleBased.Services;
-global using Microsoft.AspNetCore.Authentication;
-global using Microsoft.AspNetCore.Authentication.JwtBearer;
-global using Microsoft.AspNetCore.Authorization;
-global using Microsoft.AspNetCore.Mvc;
-global using Microsoft.IdentityModel.Tokens;
-global using System.Diagnostics;
-global using System.IdentityModel.Tokens.Jwt;
-global using System.Security.Claims;
-global using System.Text;
-global using JWTLoginAuthorizationRoleBased.Generics;
-global using JWTLoginAuthorizationRoleBased.Model;
-global using Microsoft.EntityFrameworkCore;
-
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

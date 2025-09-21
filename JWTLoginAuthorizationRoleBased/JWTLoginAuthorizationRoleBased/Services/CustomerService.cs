@@ -1,7 +1,4 @@
-﻿using JWTLoginAuthorizationRoleBased.Generics;
-using JWTLoginAuthorizationRoleBased.Model;
-
-namespace JWTLoginAuthorizationRoleBased.Services
+﻿namespace JWTLoginAuthorizationRoleBased.Services
 {
     public class CustomerService : ICustomerService
     {

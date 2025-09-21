@@ -1,8 +1,7 @@
 
-using JWTLoginAuthorizationRoleBased.Model;
-
 namespace JWTLoginAuthorizationRoleBased.Controllers
-{    
+{
+    [Route("[controller]")]
     public class AuthController : Controller
     {
         private readonly IUserService _userService;
@@ -13,6 +12,8 @@ namespace JWTLoginAuthorizationRoleBased.Controllers
         }
 
         [HttpGet]
+        [Route("/")]
+        [Route("[action]")]
         public IActionResult Login()
         {
             return View();
@@ -26,7 +27,7 @@ namespace JWTLoginAuthorizationRoleBased.Controllers
             if (user == null)
             {
                 ModelState.AddModelError("", "Invalid credentials");
-                return RedirectToAction("Login"); 
+                return RedirectToAction("Login", "Auth"); 
             }
 
             var token = _userService.GenerateJwtToken(user);

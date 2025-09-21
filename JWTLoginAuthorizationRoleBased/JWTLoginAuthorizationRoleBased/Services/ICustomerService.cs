@@ -1,6 +1,4 @@
-﻿using JWTLoginAuthorizationRoleBased.Model;
-
-namespace JWTLoginAuthorizationRoleBased.Services
+﻿namespace JWTLoginAuthorizationRoleBased.Services
 {
     public interface ICustomerService
     {

@@ -1,6 +1,4 @@
-﻿using JWTLoginAuthorizationRoleBased.Model;
-using Microsoft.EntityFrameworkCore;
-
+﻿
 namespace JWTLoginAuthorizationRoleBased.Generics
 {
     public interface IGenericRepository<T> where T : class
