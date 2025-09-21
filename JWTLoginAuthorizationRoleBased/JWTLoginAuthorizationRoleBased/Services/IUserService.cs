@@ -1,4 +1,6 @@
-﻿namespace JWTLoginAuthorizationRoleBased.Services
+﻿using JWTLoginAuthorizationRoleBased.Model;
+
+namespace JWTLoginAuthorizationRoleBased.Services
 {
     public interface IUserService
     {

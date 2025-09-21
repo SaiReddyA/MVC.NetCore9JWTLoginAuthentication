@@ -1,14 +1,17 @@
-﻿global using JWTLoginAuthorizationRoleBased.Models;
-global using JWTLoginAuthorizationRoleBased.Services;
+﻿global using JWTLoginAuthorizationRoleBased.Services;
+global using Microsoft.AspNetCore.Authentication;
+global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using Microsoft.AspNetCore.Authorization;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.IdentityModel.Tokens;
+global using System.Diagnostics;
 global using System.IdentityModel.Tokens.Jwt;
 global using System.Security.Claims;
 global using System.Text;
-global using Microsoft.AspNetCore.Authentication.JwtBearer;
-global using Microsoft.AspNetCore.Authentication;
-global using Microsoft.AspNetCore.Authorization;
-global using System.Diagnostics;
+global using JWTLoginAuthorizationRoleBased.Generics;
+global using JWTLoginAuthorizationRoleBased.Model;
+global using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,6 +20,12 @@ builder.Services.AddScoped<IUserService, UserService>();
 
 // JWT Config
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
+
+builder.Services.AddDbContext<JWtbankContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 builder.Services.AddAuthentication(options =>
 {
@@ -53,10 +62,10 @@ builder.Services.AddAuthorization();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-//if (!app.Environment.IsDevelopment())
-//{
-   
-//}
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
 app.UseExceptionHandler("/Home/Error");
 app.UseHsts();
 app.UseHttpsRedirection();

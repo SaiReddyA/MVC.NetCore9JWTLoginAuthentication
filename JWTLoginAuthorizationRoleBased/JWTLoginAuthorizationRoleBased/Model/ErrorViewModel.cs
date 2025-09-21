@@ -1,4 +1,4 @@
-namespace JWTLoginAuthorizationRoleBased.Models
+namespace JWTLoginAuthorizationRoleBased.Model
 {
     public class ErrorViewModel
     {

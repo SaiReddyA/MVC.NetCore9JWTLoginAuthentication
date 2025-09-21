@@ -1,4 +1,6 @@
 
+using JWTLoginAuthorizationRoleBased.Model;
+
 namespace JWTLoginAuthorizationRoleBased.Controllers
 {    
     public class AuthController : Controller
