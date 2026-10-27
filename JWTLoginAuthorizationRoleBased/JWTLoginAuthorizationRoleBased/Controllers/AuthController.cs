@@ -46,6 +46,8 @@ namespace JWTLoginAuthorizationRoleBased.Controllers
                 return RedirectToAction("UserPanel", "Home");
         }
 
+
+
         [HttpPost("logout")]
         [ValidateAntiForgeryToken]
         public IActionResult Logout()
